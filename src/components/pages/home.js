@@ -14,16 +14,18 @@ class Home extends Component {
       topScore:0,
     };
   
-    removeFriend = id => {
-      // Filter this.state.friends for friends with an id not equal to the id being removed
-      const friends = this.state.friends.filter(friend => friend.id !== id);
-      // Set this.state.friends equal to the new friends array
-      this.setState({ friends });
-    };
+    // removeFriend = id => {
+    //   // Filter this.state.friends for friends with an id not equal to the id being removed
+    //   const friends = this.state.friends.filter(friend => friend.id !== id);
+    //   // Set this.state.friends equal to the new friends array
+    //   this.setState({ friends });
+    // };
 
     clickedFriend = id => {
         const clickedFriendId = this.state.friends.id
-        this.state.clicked.push(clickedFriendId)
+        this.setState(previousState => ({
+            clicked: [...previousState.clicked, clickedFriendId]
+        }));
     }
 
     shuffleArray = friends => {
@@ -45,7 +47,7 @@ class Home extends Component {
         
           {shuffledFriends.map(friend => (
             <FriendCard
-              removeFriend={this.removeFriend}
+              clickedFriend={this.clickedFriend}
               id={friend.id}
               key={friend.id}
               name={friend.name}
