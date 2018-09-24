@@ -23,14 +23,16 @@ class Home extends Component {
 
     clickedFriend = id => {
         const clickedFriendId = this.state.friends.id
-        if(this.state.clicked.indexOf(this.clickedFriend)>-1){
-            this.setState(state => ({
+        if(this.state.clicked.indexOf(this.clickedFriendId)>-1) {
+            this.props.setState(state => ({
                 clicked: [],
-                score: 0
-            }));
+                score: 0,
+            },
+            window.location="/"
+        ));
         }
         else{
-        this.setState(state => ({
+        this.props.setState(state => ({
             clicked: [...state.clicked, clickedFriendId],
             score: state.score+1
         }));
