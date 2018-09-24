@@ -23,8 +23,8 @@ class Home extends Component {
 
     clickedFriend = id => {
         const clickedFriendId = this.state.friends.id
-        this.setState(previousState => ({
-            clicked: [...previousState.clicked, clickedFriendId]
+        this.setState(state => ({
+            clicked: [...state.clicked, clickedFriendId]
         }));
     }
 
