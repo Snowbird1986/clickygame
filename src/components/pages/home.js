@@ -23,9 +23,18 @@ class Home extends Component {
 
     clickedFriend = id => {
         const clickedFriendId = this.state.friends.id
+        if(this.state.clicked.indexOf(this.clickedFriend)>-1){
+            this.setState(state => ({
+                clicked: [],
+                score: 0
+            }));
+        }
+        else{
         this.setState(state => ({
-            clicked: [...state.clicked, clickedFriendId]
+            clicked: [...state.clicked, clickedFriendId],
+            score: state.score+1
         }));
+        }
     }
 
     shuffleArray = friends => {
