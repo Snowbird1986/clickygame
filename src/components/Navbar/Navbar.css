@@ -1,0 +1,20 @@
+nav.navbar.navbar-default {
+  margin-bottom: 0;
+}
+.navbar li {
+  width:33%;
+  text-align:center;
+  color: whitesmoke;
+  /* background-color:#5133a4; */
+}
+.navbar {
+  background-color:#5133a4;
+  color:whitesmoke;
+  position: fixed;
+  width: 100%;
+  min-height: 70px;
+  z-index: 99;
+}
+.nav-item {
+  color:whitesmoke
+}
