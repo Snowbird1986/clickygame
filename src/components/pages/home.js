@@ -8,7 +8,10 @@ import { shuffle } from "lodash";
 class Home extends Component {
     // Setting this.state.friends to the friends json array
     state = {
-      friends
+      friends,
+      clicked:[],
+      score:0,
+      topScore:0,
     };
   
     removeFriend = id => {
@@ -17,6 +20,11 @@ class Home extends Component {
       // Set this.state.friends equal to the new friends array
       this.setState({ friends });
     };
+
+    clickedFriend = id => {
+        const clickedFriendId = this.state.friends.id
+        this.state.clicked.push(clickedFriendId)
+    }
 
     shuffleArray = friends => {
         let i = friends.length - 1;

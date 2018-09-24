@@ -32,7 +32,7 @@ const Navbar = props => (
                 : "nav-item col-md-4"
             }
           >
-            Score: 0 |Top Score: 0
+            Score: {props.score} | Top Score: {props.topScore}
         </li>
       </ul>
     </div>

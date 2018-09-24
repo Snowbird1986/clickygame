@@ -10,15 +10,34 @@ import Footer from "./components/Footer";
 import Header from "./components/Header";
 import Home from "./components/pages/home";
 
-const App = () => (
-  <Router>
-    <div> 
-      <Navbar />
-      <Header />
-      <Route exact path="/" component={Home} />
-      <Footer />
-    </div>
-  </Router>
-);
+class App extends Component {
+  constructor(props){
+  super (props)
+  this.state={
+    score:0,
+    topScore:0
+  }}
+  updateScore = (score) => {
+    this.setState({ score: score });
+  }
+  updateTopScore = (score, topScore) => {
+    if(score>topScore){
+    this.setState({ topScore: topScore });
+    }
+  }
+
+  render (){
+    return (
+      <Router>
+        <div> 
+          <Navbar score={this.updateScore} topScore={this.updateTopScore}/>
+          <Header />
+          <Route exact path="/" component={Home} />
+          <Footer />
+        </div>
+      </Router>
+    );
+  }
+}
 
 export default App;
