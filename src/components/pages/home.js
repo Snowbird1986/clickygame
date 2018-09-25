@@ -21,6 +21,10 @@ class Home extends Component {
     //   this.setState({ friends });
     // };
 
+    complonentDidMount() {
+      window.location="/"
+    }
+
     clickedFriend = name => {
         const clickedFriendName = this.state.friends.name
         if(this.state.clicked.indexOf(this.clickedFriendName)>-1) {

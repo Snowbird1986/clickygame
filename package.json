@@ -2,7 +2,7 @@
   "name": "clicky",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://snowbird1986.github.io/clickygame/",
+  "homepage": "https://snowbird1986.github.io/",
   "dependencies": {
     "axios": "^0.18.0",
     "gh": "^1.13.3",
