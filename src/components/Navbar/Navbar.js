@@ -9,7 +9,7 @@ const Navbar = props => (
       <ul className="navbar-nav col-md-12">
         <li className="col-md-4">
           <Link
-            to="/"
+            to="clickygame/"
             className={
               window.location.pathname === "/"
                 ? "nav-item active"
