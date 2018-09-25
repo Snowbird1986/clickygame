@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Title from "../../components/Title";
-import friends from "friends.json";
+import friends from "../../friends.json";
 import FriendCard from "../../components/FriendCard";
 import Wrapper from "../../components/Wrapper";
 import { shuffle } from "lodash";
