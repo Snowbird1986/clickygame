@@ -30,7 +30,7 @@ class App extends Component {
     return (
       <Router>
         <div> 
-          <Navbar score={this.updateScore} topScore={this.updateTopScore}/>
+          <Navbar score={this.state.score} topScore={this.state.topScore}/>
           <Header />
           {/* <Route exact path="/" component={Home} clickedFriend={this.score} clickedFriend={this.topScore}/> */}
           <Home />

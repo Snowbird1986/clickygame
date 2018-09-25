@@ -26,21 +26,29 @@ class Home extends Component {
     // }
 
     clickedFriend = name => {
-        const clickedFriendName = this.state.friends.name
-        if(this.state.clicked.indexOf(this.clickedFriendName)>-1) {
+        const clickedFriendName = name
+        console.log(clickedFriendName)
+        console.log(this.state)
+        console.log(this.state.clicked.indexOf(clickedFriendName))
+        // console.log(clicked)
+        if(this.state.clicked.indexOf(clickedFriendName)>-1) {
             this.setState(state => ({
                 clicked: [],
                 score: 0,
             }
+            
             // ,
             // window.location="/"
         ));
+
+        console.log(this.state)
         }
         else{
         this.setState(state => ({
             clicked: [...state.clicked, clickedFriendName],
-            score: state.score+1
+            score: this.state.score+1
         }));
+        console.log(this.state)
         }
     }
 
