@@ -21,9 +21,9 @@ class Home extends Component {
     //   this.setState({ friends });
     // };
 
-    complonentDidMount() {
-      window.location="/"
-    }
+    // complonentDidMount() {
+    //   window.location="/"
+    // }
 
     clickedFriend = name => {
         const clickedFriendName = this.state.friends.name
