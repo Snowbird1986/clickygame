@@ -24,7 +24,7 @@ class Home extends Component {
     clickedFriend = id => {
         const clickedFriendId = this.state.friends.id
         if(this.state.clicked.indexOf(this.clickedFriendId)>-1) {
-            this.props.setState(state => ({
+            this.setState(state => ({
                 clicked: [],
                 score: 0,
             },
@@ -32,7 +32,7 @@ class Home extends Component {
         ));
         }
         else{
-        this.props.setState(state => ({
+        this.setState(state => ({
             clicked: [...state.clicked, clickedFriendId],
             score: state.score+1
         }));
