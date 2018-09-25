@@ -8,16 +8,16 @@ const Navbar = props => (
     <div class="col-md-12">
       <ul className="navbar-nav col-md-12">
         <li className="col-md-4">
-          <Link
-            to="https://snowbird1986.github.io/clickygame/"
+          {/* <Link
+            to="/"
             className={
               window.location.pathname === "/"
                 ? "nav-item active"
                 : "nav-item"
             }
-          >
+          > */}
             Clicky Game
-          </Link>
+          {/* </Link> */}
         </li>
         <li className={
               window.location.pathname === "/discover"
