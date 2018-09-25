@@ -5,6 +5,9 @@
   "homepage": "https://github.com/Snowbird1986/clickygame",
   "dependencies": {
     "axios": "^0.18.0",
+    "gh": "^1.13.3",
+    "gh-pages": "^2.0.0",
+    "pages": "0.0.16",
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
     "react-router-dom": "^4.3.1",
@@ -14,8 +17,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
+    "predeploy": "yarn run build",
+    "deploy": "gh-pages -b master -d build",
     "eject": "react-scripts eject"
   }
 }
