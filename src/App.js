@@ -21,10 +21,16 @@ class App extends Component {
     this.setState({ score: score });
   }
   updateTopScore = (score, topScore) => {
+    // console.log(score)
+    // console.log(topScore)
+    // console.log(score>topScore)
     if(score>topScore){
-    this.setState({ topScore: topScore });
+    this.setState({ topScore: score });
     }
   }
+  componentDidUpdate() {
+    console.log(this.state);
+}
 
   render (){
     return (
@@ -33,7 +39,7 @@ class App extends Component {
           <Navbar score={this.state.score} topScore={this.state.topScore}/>
           <Header />
           {/* <Route exact path="/" component={Home} clickedFriend={this.score} clickedFriend={this.topScore}/> */}
-          <Home />
+          <Home updateScore={this.updateScore} updateTopScore={this.updateTopScore} score={this.state.score} topScore={this.state.topScore}/>
           <Footer />
         </div>
       </Router>

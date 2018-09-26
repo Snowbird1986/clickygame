@@ -27,6 +27,11 @@ class Home extends Component {
     componentDidUpdate() {
       console.log(this.state);
   }
+  updateTopScore = (score, topScore) => {
+    if(score>topScore){
+    this.setState({ topScore: topScore });
+    }
+  }
 
     clickedFriend = name => {
         const clickedFriendName = name
@@ -35,23 +40,28 @@ class Home extends Component {
         console.log(this.state.clicked.indexOf(clickedFriendName))
         // console.log(clicked)
         if(this.state.clicked.indexOf(clickedFriendName)>-1) {
-            this.setState(state => ({
+            this.setState({
                 clicked: [],
-                score: 0,
+                // score: 0,
             }
             
             // ,
             // window.location="/"
-        ));
+        );
+        this.props.updateScore(0)
 
         // componentDidUpdate()
         }
         else{
-          this.setState(state => ({
-              clicked: [...state.clicked, clickedFriendName],
-              score: state.score+1
-          }));
+          this.setState({
+              clicked: [...this.state.clicked, clickedFriendName],
+              // score: this.state.score+1,
+          });
         // componentDidUpdate()
+        // console.log(this.props.score)
+        // this.updateTopScore(this.state.score,this.state.topScore)
+        this.props.updateScore(this.props.score+1)
+        this.props.updateTopScore(this.props.score+1,this.props.topScore)
         }
     }
 
