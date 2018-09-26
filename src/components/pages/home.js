@@ -24,11 +24,14 @@ class Home extends Component {
     // complonentDidMount() {
     //   window.location="/"
     // }
+    componentDidUpdate() {
+      console.log(this.state);
+  }
 
     clickedFriend = name => {
         const clickedFriendName = name
         console.log(clickedFriendName)
-        console.log(this.state)
+        // console.log(this.state)
         console.log(this.state.clicked.indexOf(clickedFriendName))
         // console.log(clicked)
         if(this.state.clicked.indexOf(clickedFriendName)>-1) {
@@ -41,14 +44,14 @@ class Home extends Component {
             // window.location="/"
         ));
 
-        console.log(this.state)
+        // componentDidUpdate()
         }
         else{
-        this.setState(state => ({
-            clicked: [...state.clicked, clickedFriendName],
-            score: this.state.score+1
-        }));
-        console.log(this.state)
+          this.setState(state => ({
+              clicked: [...state.clicked, clickedFriendName],
+              score: state.score+1
+          }));
+        // componentDidUpdate()
         }
     }
 
