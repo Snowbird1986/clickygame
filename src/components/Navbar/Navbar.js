@@ -16,7 +16,7 @@ const Navbar = props => (
                 : "nav-item"
             }
           >
-            Clicky Game
+            90's Cartoon Clicky Game
           </Link>
         </li>
         <li className={
